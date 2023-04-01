@@ -12,6 +12,7 @@ interface Edge {
     id: number;
     from: number;
     to: number;
+    arrows?:string
 }
 
 const nodesData: Node[] = [
@@ -21,7 +22,7 @@ const nodesData: Node[] = [
 ];
 
 const edgesData: Edge[] = [
-    { id: 1, from: 1, to: 2 },
+    { id: 1, from: 1, to: 2, arrows: "to" },
     { id: 2, from: 1, to: 3 },
     { id: 3, from: 2, to: 3 },
 ];
@@ -47,6 +48,18 @@ function MyNetwork() {
         const options = {
             nodes:{
                 shape: 'box',
+                color: {
+                    border: '#2B7CE9',
+                    background: '#fc9797',
+                    highlight: {
+                      border: '#2B7CE9',
+                      background: '#D2E5FF'
+                    },
+                    hover: {
+                      border: '#2B7CE9',
+                      background: '#97c2fc'
+                    }
+                  },
             },
             interaction: {
                 hover: true,
